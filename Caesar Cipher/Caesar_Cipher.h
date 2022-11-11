@@ -18,7 +18,7 @@ char* encrypt(char* text, int shift_n_times) {
     for(i = 0; text[i] != '\0'; i++){
         if(isalpha(text[i])){
             // check if the letter is uppercase, if true, then add 65 to its ASCII value after the modulo operation, else, add 97 to its ASCII value
-            encrypted_text[i] = (isupper(text[i])) ? (((text[i] - 'A') + shift_n_times) % 26) + 'A' : (((text[i] - 'a') + shift_n_times) % 26) + 'a';
+            encrypted_text[i] = (isupper(text[i])) ? (((((text[i] - 'A') + shift_n_times) % 26) + 26) % 26) + 'A' : (((((text[i] - 'a') + shift_n_times) % 26) + 26) % 26) + 'a';
         } else {
             encrypted_text[i] = text[i];
         }
@@ -35,7 +35,7 @@ char* decrypt(char* text, int shift_n_times) {
     for(i = 0; text[i] != '\0'; i++){
         if(isalpha(text[i])){
             // check if the letter is uppercase, if true, then subtract 65 from its ASCII value after the modulo operation, else, subtract 97 from its ASCII value
-            decrypted_text[i] = (isupper(text[i])) ? (((text[i] - 'A') - shift_n_times) % 26) + 'A' : (((text[i] - 'a') - shift_n_times) % 26) + 'a';
+            decrypted_text[i] = (isupper(text[i])) ? (((((text[i] - 'A') - shift_n_times) % 26) + 26) % 26) + 'A' : (((((text[i] - 'a') - shift_n_times) % 26) + 26) % 26) + 'a';
         } else {
             decrypted_text[i] = text[i];
         }
