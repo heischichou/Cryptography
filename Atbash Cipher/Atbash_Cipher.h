@@ -12,16 +12,20 @@
 */
 
 // The decryption method for the Atbash Cipher is the same as the encryption method, thus, we can use the same method for both.
-char* atbashCipher(char* text) {
-    char* cipher_text = (char*) malloc(strlen(text) + sizeof(char));
-    int i = 0;
+char* atbashCipher(char* plaintext) {
+    char* cipher_text = (char*) malloc(strlen(plaintext) + sizeof(char));
+    int i;
 
-    for(i = 0; text[i] != '\0'; i++){
-        if(isalpha(text[i])){
-            // check if the letter is uppercase, if true, then subtract 65 from its ASCII value, else, subtract 97 from its ASCII value
-            cipher_text[i] = (isupper(text[i])) ? 'Z' - (text[i] - 'A') : 'z' - (text[i] - 'a');
+    for(i = 0; plaintext[i] != '\0'; i++){
+        if(isalpha(plaintext[i])){
+            /* check if the letter is uppercase, if true, then subtract 65
+               from its ASCII value, else, subtract 97 from its ASCII value
+            */
+            cipher_text[i] = (isupper(plaintext[i])) ? 
+				(char )'Z' - (plaintext[i] - 'A') : 
+				(char) 'z' - (plaintext[i] - 'a');
         } else {
-            cipher_text[i] = text[i];
+            cipher_text[i] = plaintext[i];
         }
     }
 
