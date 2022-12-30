@@ -1,10 +1,7 @@
 #define vigenereCipher
 #ifndef vigenereCipher
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <ctype.h>
-#include <string.h>
+#include "../common.c"
 
 /*
  * Vigenere Cipher program by

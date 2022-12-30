@@ -1,10 +1,7 @@
 #define transpositonCipher
 #ifndef transpositonCipher
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <ctype.h>
-#include <string.h>
+#include "../common.c"
 
 /*
  * Columnar Transposition Cipher program by
@@ -224,7 +221,7 @@ char* decrypt(char* encrypted_text, char *key) {
     // print the matrix for testing
     print_matrix(rows, key_length, matrix);
     
-     // reconstruct the plaintext
+    // reconstruct the plaintext
     for(x = 1, z = 0; x < rows; x++){
         for(y = 0; y < key_length && matrix[x][y] != '\0'; y++){
         	decrypted_text[z++] = matrix[x][y];

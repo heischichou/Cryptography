@@ -1,10 +1,7 @@
 #define atbashCipher
 #ifndef atbashCipher
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <ctype.h>
-#include <string.h>
+#include "../common.c"
 
 /*
  * Atbash Cipher program by

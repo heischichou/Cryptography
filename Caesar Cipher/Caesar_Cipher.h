@@ -1,10 +1,7 @@
 #define caesarCipher
 #ifndef caesarCipher
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <ctype.h>
-#include <string.h>
+#include "../common.c"
 
 /*
  * Shifting/Caesar Cipher program by
